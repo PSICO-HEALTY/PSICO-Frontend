@@ -11,16 +11,43 @@ export const Colors = {
   light: {
     text: '#000000',
     background: '#ffffff',
-    backgroundElement: '#F0F0F3',
+    backgroundElement: '#f8fafc',
     backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
+    textSecondary: '#0000009a',
+
+    // Tarjetas flotantes (ej. "+500 profesionales")
+    surface: '#f6f4f3',
+    // Líneas divisorias suaves (borde del navbar, tarjetas, imagen)
+    border: '#e8eef4',
+    // Bordes que deben notarse más (botón outline)
+    borderStrong: '#0000003d',
+    // Color de marca: botones principales, checks e íconos
+    accent: '#0090ff',
+    // Fondo suave del badge "Psico Health · Cultiva tu bienestar"
+    accentSoft: '#e5f3ff',
+    // Texto e ícono del badge, legible sobre accentSoft
+    accentSoftText: '#0067b8',
+    // Fondo del recuadro de la imagen del hero
+    heroImage: '#F6F3F2',
+    // Color del brillo al pasar el mouse sobre los links del navbar
+    linkGlow: '#0090ff',
   },
   dark: {
     text: '#ffffff',
-    background: '#000000',
+    background: '#1b1b1b',
     backgroundElement: '#212225',
     backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
+    textSecondary: '#ffffffde',
+
+    // Mismos tokens que en light, con valores para fondo oscuro
+    surface: '#242424',
+    border: '#ffffff00',
+    borderStrong: '#ffffff40',
+    accent: '#0090ff',
+    accentSoft: '#00264d',
+    accentSoftText: '#66b8ff',
+    heroImage: '#242424',
+    linkGlow: '#ffffff',
   },
 } as const;
 
@@ -61,5 +88,12 @@ export const Spacing = {
   six: 64,
 } as const;
 
-export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
-export const MaxContentWidth = 800;
+// Ancho máximo del contenido (navbar y hero) para que no se estire en pantallas grandes
+export const MaxContentWidth = 1200;
+
+// Anchos (px) donde cambia el layout: desde `tablet` se muestran los links del navbar y el hero va en 2 columnas;
+// desde `desktop` las tarjetas de "¿Qué necesitas hoy?" pasan de 2 a 4 columnas
+export const Breakpoints = {
+  tablet: 768,
+  desktop: 1024,
+} as const;
